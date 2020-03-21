@@ -1,0 +1,127 @@
+.advantages {
+	display: grid;
+	grid-template-columns: repeat(28, 1fr);
+}
+
+.advantages__image {
+
+	&--1,
+	&--3 {
+		grid-column: span 14;
+	}
+
+	&--2 {
+		grid-column: span 5;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.advantages__features {
+	grid-column: span 14;
+}
+
+.advantages__logo {
+	margin: 0 auto 31px;
+	width: 91px;
+}
+
+.advantages__accommodation {
+	grid-column: span 9;
+	padding: 55px 40px 80px;
+}
+
+.advantages__accommodation-title {
+	margin-bottom: 5px;
+	font-family: 'Playfair Display Regular', 'Georgia',  serif;
+	font-size: 14px;
+	letter-spacing: 0.025em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.advantages__accommodation-subtitle {
+	@extend %title;
+}
+
+.advantages__accommodation-description {
+	line-height: 1.2;
+	letter-spacing: 0.025em;
+	text-align: center;
+}
+
+@media (min-width: 1401px) {
+	.advantages__accommodation-title {
+		@include dynamicTextIncrease(14px);
+	}
+
+	.advantages__accommodation-subtitle {
+		@include dynamicTextIncrease(24px);
+	}
+
+	.advantages__accommodation-description {
+		@include dynamicTextIncrease(16px);
+	}
+}
+
+@media (max-width: 979px) {
+	.advantages__accommodation {
+		padding: 25px 20px 40px;
+	}
+}
+
+@media (max-width: 767px) {
+	.advantages__image--2 {
+		grid-column: span 14;
+
+		img {
+			height: 400px;
+		}
+	}
+
+	.advantages__image--3 {
+		grid-column: span 28;
+	}
+
+	.advantages__accommodation {
+		grid-column: 1 / span 14;
+		grid-row: 2 / 3;
+		padding: 20px 15px;
+	}
+}
+
+@media (max-width: 559px) {
+	.advantages {
+		grid-template-columns: 1fr;
+	}
+
+	.advantages__features,
+	.advantages__image--1,
+	.advantages__image--2,
+	.advantages__image--3,
+	.advantages__accommodation {
+		grid-column: span 1;
+	}
+
+	.advantages__image--2 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.advantages__image--1,
+	.advantages__image--3 {
+
+		img {
+			width: auto;
+		}
+	}
+
+	.advantages__accommodation {
+		grid-row: 4 / 5;
+	}
+}

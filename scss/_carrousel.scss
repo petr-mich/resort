@@ -1,0 +1,20 @@
+.carrousel__toggles {
+	display: flex;
+	justify-content: center;
+}
+
+.carrousel__toggle-btn {
+	display: block;
+	margin: 0 6.67%;
+	padding: 0;
+	flex-basis: 26.67%;
+	height: 5px;
+	border: 0;
+	background-color: #590c0c;
+	cursor: pointer;
+	transition: background-color 500ms;
+
+	&.active {
+		background-color: #bfae99;
+	}
+}

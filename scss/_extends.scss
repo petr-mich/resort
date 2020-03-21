@@ -1,0 +1,26 @@
+%absolute-center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+%pseudo-absolute-center {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: block;
+}
+
+%title {
+	margin-bottom: 10px;
+	font-family: 'Playfair Display Regular', 'Georgia',  serif;
+	font-size: 24px;
+	line-height: 1.2;
+	letter-spacing: 0.025em;
+	color: $black;
+	text-align: center;
+	text-transform: uppercase;
+}

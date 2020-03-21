@@ -1,0 +1,42 @@
+.invitation {
+	padding: 56px 5px 46px;
+	background: url('../../img/invitation.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.invitation__logo {
+	margin: 0 auto 35px;
+	width: 91px;
+}
+
+.invitation__title {
+	@extend %title;
+	margin-bottom: 14px;
+	color: $white;
+}
+
+.invitation__description {
+	margin: 0 auto;
+	max-width: 420px;
+	line-height: 1.2;
+	letter-spacing: 0.025em;
+	color: $white;
+	text-align: center;
+}
+
+@media (min-resolution: 2dppx), (min-width: 1401px) {
+	.invitation {
+		background-image: url('../../img/invitation@2x.jpg');
+	}
+}
+
+@media (min-width: 1401px) {
+	.invitation__title {
+		@include dynamicTextIncrease(24px);
+	}
+
+	.invitation__description {
+		@include dynamicTextIncrease(16px);
+		max-width: 30.21%;
+	}
+}

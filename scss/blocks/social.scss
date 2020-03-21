@@ -1,0 +1,70 @@
+.social {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.social__item {
+	margin: 5px 13px 5px 0;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.social__link {
+
+	svg {
+		fill: $white;
+		transition-property: fill, opacity;
+		transition-duration: 300ms;
+	}
+
+	&--facebook svg {
+		width: 7px;
+		height: 13px;
+	}
+
+	&--twitter svg {
+		width: 13px;
+		height: 11px;
+	}
+
+	&--google svg {
+		width: 14px;
+		height: 13px;
+	}
+
+	&--linkedin svg {
+		width: 13px;
+		height: 12px;
+	}
+
+	&--flickr svg {
+		width: 13px;
+		height: 13px;
+	}
+
+	&--dribble svg {
+		width: 13px;
+		height: 14px;
+	}
+
+	&--tumblr svg {
+		width: 12px;
+		height: 14px;
+	}
+
+	&:hover,
+	&:focus {
+
+		svg {
+			fill: $black;
+		}
+	}
+
+	&:active {
+		opacity: 0.5;
+	}
+}

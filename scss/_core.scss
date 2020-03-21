@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* Основные стили*/
+
+html {
+	font-size: $fontSizeDefault;
+}
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	min-width: 320px;
+	font-family: 'Open Sans Condensed Light', 'Arial', sans-serif;
+	color: $mainColor;
+	background-color: $mainBgColor;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.wrapper {
+	@include min-max(320px, 1400px, 0);
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	-webkit-clip-path: inset(100%);
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}

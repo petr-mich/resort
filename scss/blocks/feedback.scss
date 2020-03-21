@@ -1,0 +1,190 @@
+$inputBorderColor: rgb(89, 12, 12);
+$placeholderColor: #c4c4c4;
+
+.feedback {
+	padding: 167px 115px 164px;
+}
+
+.feedback__form {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 57px 20px;
+}
+
+.feedback__contacts,
+.feedback__reserve {
+	grid-column: span 2;
+	margin: 0;
+	padding: 0;
+	border: none;
+
+	legend {
+		display: block;
+		margin-bottom: 18px;
+		font-family: 'Playfair Display Bold', 'Georgia',  serif;
+		font-size: 16px;
+		line-height: 1.1;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		border: none;
+	}
+}
+
+.feedback__fields-group {
+	display: grid;
+	grid-row-gap: 22px;
+}
+
+.feedback__field {
+
+	input {
+		display: block;
+		padding: 13.4px 26px;
+		width: 100%;
+		box-sizing: border-box;
+		font-size: 16px;
+		line-height: 1.2;
+		letter-spacing: 0.02em;
+		color: inherit;
+		background-color: $white;
+		border: 1px solid $inputBorderColor;
+		border-radius: 6px;
+		box-shadow: none;
+
+		&::placeholder {
+			color: $placeholderColor;
+		}
+	}
+}
+
+.feedback__two-fields {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 22px 20px;
+}
+
+.feedback__privacy {
+	align-self: center;
+	justify-self: center;
+	padding: 13.4px 5px 13.4px 43px;
+
+	label {
+		position: relative;
+		display: inline-block;
+		font-size: 16px;
+		line-height: 1.2;
+		letter-spacing: 0.02em;
+		color: $placeholderColor;
+		cursor: pointer;
+		user-select: none;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -87.5%;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 50%;
+			height: 104.17%;
+
+			background-color: $inputBorderColor;
+			border-radius: 5px;
+			transition: background-color 300ms;
+		}
+
+		&:hover,
+		&:focus {
+
+			&::before {
+				background-color: darken($inputBorderColor, 10);
+			}
+		}
+	}
+
+	input:checked + label::after {
+		content: '';
+		position: absolute;
+		left: -70%;
+		top: 15%;
+		transform: rotate(50deg);
+		width: 16%;
+		height: 50%;
+		box-sizing: border-box;
+		border: 0.18em solid $white;
+		border-top: none;
+		border-left: none;
+	}
+}
+
+.feedback__submit-button {
+	grid-column: 2 / span 2;
+	display: block;
+	padding: 13.2px 30px;
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.2;
+	letter-spacing: 0.02em;
+	color: $white;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: $inputBorderColor;
+	border-radius: 6px;
+	border: none;
+	transition-property: background-color, color;
+	transition-duration: 300ms;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		background-color: darken($inputBorderColor, 10);
+	}
+
+	&:active {
+		color: darken($white, 20);
+	}
+}
+
+@media (min-width: 1401px) {
+	.feedback__contacts legend,
+	.feedback__reserve legend,
+	.feedback__field input,
+	.feedback__privacy label,
+	.feedback__submit-button {
+		@include dynamicTextIncrease(16px);
+	}
+}
+
+@media (max-width: 1399px) {
+	.feedback {
+		padding: 100px 60px 100px;
+	}
+}
+
+@media (max-width: 1199px) {
+	.feedback {
+		padding: 50px 30px;
+	}
+}
+
+@media (max-width: 979px) {
+	.feedback {
+		padding: 20px 15px;
+	}
+
+	.feedback__form {
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+	}
+
+	.feedback__contacts,
+	.feedback__reserve {
+		grid-column: span 1;
+	}
+
+	.feedback__fields-group {
+		grid-row-gap: 10px;
+	}
+	.feedback__submit-button {
+		grid-column: 1 / span 1;
+	}
+}
